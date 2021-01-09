@@ -18,9 +18,12 @@ class SlingShot{
         this.sling.bodyA = null;
     }
 
+    attach(body){
+        this.sling.bodyA=body;
+    }
+
     display(){
-        image(this.sling1,200,20)
-        image(this.sling2,170,20)
+       
 
         if(this.sling.bodyA){
             var pointA = this.sling.bodyA.position;
@@ -28,8 +31,10 @@ class SlingShot{
             if(pointA.x<220){
                 strokeWeight(17);
                 stroke(48, 22, 8)
-                line(pointA.x-20, pointA.y, pointB.x-20, pointB.y);
+                
                 line(pointA.x-20, pointA.y, pointB.x+20, pointB.y);
+                image(birdImage,pointA.x-28 ,pointA.y-22,50,50)
+                line(pointA.x-20, pointA.y, pointB.x-20, pointB.y);
                 image(this.sling3,pointA.x-30,pointA.y-17,15,30)
             }
             
@@ -39,8 +44,12 @@ class SlingShot{
                 line(pointA.x+20, pointA.y, pointB.x-20, pointB.y);
                 line(pointA.x+20, pointA.y, pointB.x+20, pointB.y);
                 image(this.sling3,pointA.x+20,pointA.y-15,15,30)
+
                 }
+                
         }
+        image(this.sling1,200,20)
+        image(this.sling2,170,20)
     }
     
 }
